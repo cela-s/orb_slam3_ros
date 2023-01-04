@@ -30,7 +30,7 @@ endif()
 
 LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
 
-find_package(OpenCV 4.2)
+find_package(OpenCV 4.6)
 if(NOT OpenCV_FOUND)
   message(FATAL_ERROR "OpenCV 4.2 not found.")
 endif()
@@ -41,6 +41,9 @@ MESSAGE(${OpenCV_VERSION})
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
+
+set(cv_bridge_DIR /usr/local/share/cv_bridge/cmake)
+
 find_package(catkin REQUIRED COMPONENTS
   cv_bridge
   image_transport
